@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 class GUI extends JFrame{
     JPanel panel=new JPanel();
 
-    JLabel instruction=new JLabel("Please Select a Game Below");
+    JLabel instruction=new JLabel("Please Select a Game:");
     //ADD CHOICES TO DROPDOWN
     JLabel gameSelect=new JLabel("Games:");
     String choices[] = {
@@ -32,7 +32,7 @@ class GUI extends JFrame{
     }
     //CREATE GUI
     public GUI(){
-        super("GitPic");
+        super("Game Catalog");
         setSize(625,300);
         setResizable(true);
         panel.add(instruction);
@@ -43,6 +43,13 @@ class GUI extends JFrame{
         add(panel);
 
         setVisible(true);
+
+        beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+            @Override
+            public void actionPerformed(ActionEvent e){
+                tictactoe T = new tictactoe();
+            }
+        });
         //EXIT PROGRAM
         exit.addActionListener(new ActionListener() {//add event listener to exit
             @Override
