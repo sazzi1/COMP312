@@ -44,12 +44,7 @@ class GUI extends JFrame{
 
         setVisible(true);
 
-        beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
-            @Override
-            public void actionPerformed(ActionEvent e){
-                tictactoe T = new tictactoe();
-            }
-        });
+
         //EXIT PROGRAM
         exit.addActionListener(new ActionListener() {//add event listener to exit
             @Override
@@ -57,32 +52,59 @@ class GUI extends JFrame{
                 System.exit(0);//close
             }
         });
-        //DIRECTORY CHOICES
+
         choicesButton.addActionListener(new ActionListener(){// add event listener to choicesButton
             public void actionPerformed(ActionEvent e) {
                 //fetch user choice from drop down
                 JComboBox cb = (JComboBox) e.getSource();
                 //set choices equal to selected item in JComboBox cb... Updates live!
                 String choices = (String) cb.getSelectedItem();
-                // if choice is downloads, get downloads location and set as folderPath
+
                 if ((choices).equals("Snake")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
+
+                        }
+                    });
 
                 }
-                // if choice is desktop, get desktop location and set as folderPath
+
                 if ((choices).equals("Hangman")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
 
+                        }
+                    });
                 }
-                // if choice is documents, get documents location and set as folderPath
+
                 if ((choices).equals("Tic Tac Toe")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
+                            tictactoe start = new tictactoe();
 
+                        }
+                    });
                 }
-                // if choice is pictures, get pictures location and set as folderPath
-                if ((choices).equals("")) {// if choice is pictures, get pictures location and set as folderPath
 
-                }
-                // if choice is root, get root location and set as folderPath
                 if ((choices).equals("")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
 
+                        }
+                    });
+                }
+
+                if ((choices).equals("")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
+
+                        }
+                    });
                 }
             }
         });
