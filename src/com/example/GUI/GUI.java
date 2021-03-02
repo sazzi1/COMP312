@@ -1,23 +1,112 @@
 package com.example.GUI;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JComboBox;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.*;
 
+class GUI extends JFrame{
+    JPanel panel=new JPanel();
 
-public class GUI {
+    JLabel instruction=new JLabel("Please Select a Game:");
+    //ADD CHOICES TO DROPDOWN
+    JLabel gameSelect=new JLabel("Games:");
+    String choices[] = {
+            "Snake",
+            "Hangman",
+            "Tic Tac Toe",
+            "",
+            "",
+            "",
+    };
+    //ADD BUTTONS
+    public JComboBox choicesButton = new JComboBox(choices);
+    public JButton beginButton=new JButton("Begin!");
+    public JButton exit = new JButton("Exit");
+    //INIT GUI
     public static void main(String[] args){
-        System.out.println("WELCOME");
-        JFrame frame = new JFrame("GAME CATALOG");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(625,300);
-        JButton button = new JButton("Press");
-        frame.getContentPane().add(button); // Adds Button to content pane of frame
-        frame.setVisible(true);
+        new GUI();
+    }
+    //CREATE GUI
+    public GUI(){
+        super("Game Catalog");
+        setSize(625,300);
+        setResizable(true);
+        panel.add(instruction);
+        panel.add(gameSelect);
+        panel.add(choicesButton);
+        panel.add(beginButton);
+        panel.add(exit);
+        add(panel);
+
+        setVisible(true);
+
+
+        //EXIT PROGRAM
+        exit.addActionListener(new ActionListener() {//add event listener to exit
+            @Override
+            public void actionPerformed(ActionEvent e){
+                System.exit(0);//close
+            }
+        });
+
+        choicesButton.addActionListener(new ActionListener(){// add event listener to choicesButton
+            public void actionPerformed(ActionEvent e) {
+                //fetch user choice from drop down
+                JComboBox cb = (JComboBox) e.getSource();
+                //set choices equal to selected item in JComboBox cb... Updates live!
+                String choices = (String) cb.getSelectedItem();
+
+                if ((choices).equals("Snake")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
+
+                        }
+                    });
+
+                }
+
+                if ((choices).equals("Hangman")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
+
+                        }
+                    });
+                }
+
+                if ((choices).equals("Tic Tac Toe")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
+                            tictactoe start = new tictactoe();
+
+                        }
+                    });
+                }
+
+                if ((choices).equals("")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
+
+                        }
+                    });
+                }
+
+                if ((choices).equals("")) {
+                    beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
+                        @Override
+                        public void actionPerformed(ActionEvent e){
+
+                        }
+                    });
+                }
+            }
+        });
     }
 }
