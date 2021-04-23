@@ -1,5 +1,6 @@
-package com.example.GUI;
+package com.example.project;
 
+import com.example.project.Games.tictactoe.tictactoe;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -10,11 +11,11 @@ import java.awt.event.ActionListener;
 
 class GUI extends JFrame{
     JPanel panel=new JPanel();
-
     JLabel instruction=new JLabel("Please Select a Game:");
     //ADD CHOICES TO DROPDOWN
     JLabel gameSelect=new JLabel("Games:");
-    String choices[] = {
+    String[] choices = {
+            "",
             "Snake",
             "Hangman",
             "Tic Tac Toe",
@@ -26,10 +27,12 @@ class GUI extends JFrame{
     public JComboBox choicesButton = new JComboBox(choices);
     public JButton beginButton=new JButton("Begin!");
     public JButton exit = new JButton("Exit");
+
     //INIT GUI
     public static void main(String[] args){
         new GUI();
     }
+
     //CREATE GUI
     public GUI(){
         super("Game Catalog");
@@ -60,6 +63,7 @@ class GUI extends JFrame{
                 //set choices equal to selected item in JComboBox cb... Updates live!
                 String choices = (String) cb.getSelectedItem();
 
+                assert choices != null;
                 if ((choices).equals("Snake")) {
                     beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
                         @Override
@@ -83,7 +87,7 @@ class GUI extends JFrame{
                     beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
                         @Override
                         public void actionPerformed(ActionEvent e){
-                            tictactoe start = new tictactoe();
+                            new tictactoe();
 
                         }
                     });
