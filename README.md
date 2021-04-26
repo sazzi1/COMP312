@@ -1,12 +1,12 @@
 # README
 
 # Purpose
-The purpose of our program is...
+
 
 
 
 #Tic-Tac-Toe
-This game is written in java and uses jframe
+This game is written in java and uses JFrame. Currently, only single play mode is supported.
 
 DEMO
 

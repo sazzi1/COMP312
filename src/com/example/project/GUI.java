@@ -12,8 +12,8 @@ import java.awt.event.ActionListener;
 class GUI extends JFrame{
     JPanel panel=new JPanel();
     JLabel instruction=new JLabel("Please Select a Game:");
-    //ADD CHOICES TO DROPDOWN
-    JLabel gameSelect=new JLabel("Games:");
+    //Select Games
+    JLabel gameSelect=new JLabel(":");
     String[] choices = {
             "",
             "Snake",
@@ -23,17 +23,12 @@ class GUI extends JFrame{
             "",
             "",
     };
-    //ADD BUTTONS
     public JComboBox choicesButton = new JComboBox(choices);
     public JButton beginButton=new JButton("Begin!");
     public JButton exit = new JButton("Exit");
 
-    //INIT GUI
-    public static void main(String[] args){
-        new GUI();
-    }
-
-    //CREATE GUI
+    //CREATE GUI - name, size
+    //Add text box
     public GUI(){
         super("Game Catalog");
         setSize(625,300);
@@ -44,9 +39,7 @@ class GUI extends JFrame{
         panel.add(beginButton);
         panel.add(exit);
         add(panel);
-
         setVisible(true);
-
 
         //EXIT PROGRAM
         exit.addActionListener(new ActionListener() {//add event listener to exit
@@ -58,11 +51,8 @@ class GUI extends JFrame{
 
         choicesButton.addActionListener(new ActionListener(){// add event listener to choicesButton
             public void actionPerformed(ActionEvent e) {
-                //fetch user choice from drop down
                 JComboBox cb = (JComboBox) e.getSource();
-                //set choices equal to selected item in JComboBox cb... Updates live!
                 String choices = (String) cb.getSelectedItem();
-
                 assert choices != null;
                 if ((choices).equals("Snake")) {
                     beginButton.addActionListener(new ActionListener() {// add event listener to beginButton
@@ -112,5 +102,8 @@ class GUI extends JFrame{
                 }
             }
         });
+    }
+    public static void main(String[] args){
+        new GUI();
     }
 }

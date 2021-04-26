@@ -26,7 +26,7 @@ public class tictactoe implements ActionListener {
         mainPanel.add(resetButton);
         for (int i = 0; i < 9; i++) {
             button[i] = new JButton();
-            button[i].setBackground(Color.BLACK);
+            button[i].setBackground(Color.WHITE);
             button[i].setText("");
             button[i].setVisible(true);
             gameBoard.add(button[i]);
@@ -38,10 +38,7 @@ public class tictactoe implements ActionListener {
         window.setResizable(false);
     }
 
-    public static void main(String[] args) {
 
-        new tictactoe();
-    }
 
     public void actionPerformed(ActionEvent a) {
         count++;
@@ -61,9 +58,11 @@ public class tictactoe implements ActionListener {
 
         resetButton.addActionListener(new ActionListener() {//add event listener to exit
             //@Override
+
             final char[] board = {' ', ' ', ' ',
                     ' ', ' ', ' ',
                     ' ', ' ', ' '};
+
 
             public void actionPerformed(ActionEvent e) {
                 Arrays.fill(this.board, ' ');
@@ -71,7 +70,9 @@ public class tictactoe implements ActionListener {
                     button[i].setText("");
                     button[i].setEnabled(true);
                     button[i].setFocusable(false);
+                    count = 0;
                 }
+
             }
         });
 
@@ -104,6 +105,8 @@ public class tictactoe implements ActionListener {
             JOptionPane.showMessageDialog(null, "Tie Game");
         }
     }
+
 }
+
 
 
