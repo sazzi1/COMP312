@@ -9,7 +9,6 @@ public class GUI extends JFrame {
     JLabel gameSelect = new JLabel(":");
     String[] choices = {
             "",
-            "",
             "Tic Tac Toe",
     };
     public JComboBox choicesButton = new JComboBox(choices);
@@ -53,7 +52,7 @@ public class GUI extends JFrame {
 
                 }
 
-                if ((choices).equals("Hangman")) {
+                if ((choices).equals("")) {
                     beginButton.addActionListener(new ActionListener() { // add event listener to beginButton
                         @Override
                         public void actionPerformed(ActionEvent e) {
