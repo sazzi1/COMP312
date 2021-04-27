@@ -10,6 +10,7 @@ Included files: clearbuttons.java, launcher.java, panel.java,TicTacToe.java, and
 Preferred method : launcher.jar
 Alternative method: GUI.jar
 
+
 ### clearbuttons.java
 This clears the program of all used characters from previous sessions 
 
