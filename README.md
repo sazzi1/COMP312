@@ -7,6 +7,9 @@ This is a java Tic Tac Toe game simulator that features two player support. A 3x
 # Installation
 Included files: clearbuttons.java, launcher.java, panel.java,TicTacToe.java, and GUI.java
 
+Preferred method : launcher.jar
+Alternative method: GUI.jar
+
 ### clearbuttons.java
 This clears the program of all used characters from previous sessions 
 
