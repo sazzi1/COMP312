@@ -4,21 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 public class TicTacToe {
 
     //Add the 9 buttons and reset button
     static JButton[] buttons = new JButton[9];
     static JButton resetButton = new JButton("Reset");
-
     //Count player moves
     public static int count = 0;
     static class button extends JButton implements ActionListener {
-
         boolean win = false;
         String letter = "";
-
         // Used to create
         // Blank Board
         public button() {
@@ -29,7 +25,6 @@ public class TicTacToe {
             setFocusable(false);
             setText(letter);
             addActionListener(this);
-
         }
 
         public void actionPerformed(ActionEvent a) {
@@ -54,23 +49,13 @@ public class TicTacToe {
 
             resetButton.addActionListener(new ActionListener() { //add event listener to exit
                 //Resets characters of previous session
-                final char[] board = {
-                        ' ',
-                        ' ',
-                        ' ',
-                        ' ',
-                        ' ',
-                        ' ',
-                        ' ',
-                        ' ',
-                        ' '
-                };
+
                 //Re initializes the board
                 //Used when reset is selected
                 public void actionPerformed(ActionEvent e) {
-                    Arrays.fill(this.board, ' ');
+                    //Arrays.fill(this.board, ' ');
                     for (int i = 0; i < 9; i++) {
-                        clearButtons();
+                        clearbuttons.clearButtons();
 
                     }
                     count = 0; // reset the count
@@ -107,21 +92,6 @@ public class TicTacToe {
                 JOptionPane.showMessageDialog(null, "Tie Game");
             }
         }
-    }
-
-    //clear buttons
-    //remove all mouse clicks and resets to fresh
-    public static void clearButtons() {
-        for (int i = 0; i <= 8; i++) {
-            buttons[i].setText("");
-            buttons[i].setEnabled(true);
-            buttons[i].setFocusable(false);
-        }
-        count = 0; // reset the count
-        //Reset whole panel
-        //Dont want to use this, testing purposes onlu
-        //panel.panel();
-
     }
 
 }
