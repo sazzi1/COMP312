@@ -1,11 +1,9 @@
 # README
 
-# Purpose
 
 
 
-
-#Tic-Tac-Toe
+# Tic-Tac-Toe
 This game is written in java and uses JFrame. Currently, only single play mode is supported.
 
 DEMO
